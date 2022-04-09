@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "project-x"
+version = "0.1.0"
+description = "Simple API for k8s-training."
+authors = ["Jerzy Góra <j.gora89@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.75.1"
+uvicorn = "^0.17.6"
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+isort = "^5.10.1"
+flake8 = "^4.0.1"
+
+[tool.black]
+line-length = 150
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_commas = true
+line_length = 150
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

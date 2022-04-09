@@ -1,0 +1,8 @@
+tests
+__pycache__
+.git
+.gitignore
+.flake8
+Dockerfile
+.dockerignore
+.python-version
