@@ -1,7 +1,9 @@
-from typing import Optional
+import json
+import pathlib
 
 import typer
 import uvicorn
+from quote import quote
 
 from project_x.settings.base import SETTINGS
 
@@ -30,6 +32,14 @@ def serve(config_watch: bool = CFG_WATCH):
             port=SETTINGS.uvicorn_port,
             log_level=SETTINGS.uvicorn_log_level,
         )
+
+
+@app.command()
+def populate_quotes():
+    """Populate quotes.json."""
+    quotes = quote("Stanislaw Lem")
+    with pathlib.Path("/mnt/quotes.json").open("w") as f:
+        json.dump(quotes, f)
 
 
 @app.callback()
